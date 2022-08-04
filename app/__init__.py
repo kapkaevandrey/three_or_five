@@ -5,4 +5,4 @@ from settings import Config
 app = Flask(__name__)
 app.config.from_object(Config)
 
-from . import error_handlers, views
+from . import error_handlers, views # noqa

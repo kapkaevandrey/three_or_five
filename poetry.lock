@@ -52,6 +52,20 @@ WTForms = "*"
 email = ["email-validator"]
 
 [[package]]
+name = "gunicorn"
+version = "20.1.0"
+description = "WSGI HTTP Server for UNIX"
+category = "main"
+optional = false
+python-versions = ">=3.5"
+
+[package.extras]
+eventlet = ["eventlet (>=0.24.1)"]
+gevent = ["gevent (>=1.4.0)"]
+setproctitle = ["setproctitle"]
+tornado = ["tornado (>=0.2)"]
+
+[[package]]
 name = "itsdangerous"
 version = "2.1.2"
 description = "Safely pass data to untrusted environments and back."
@@ -123,13 +137,14 @@ email = ["email-validator"]
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "a6bf9220639647d575fdd6b5ad02c8143389c01bdd5e5f232c4e4cc0ecfab98f"
+content-hash = "d1717dc344e0c3e4b2fd64b3176f1753bc7aa717f6d6888fbde42ed6f9ae9ce3"
 
 [metadata.files]
 click = []
 colorama = []
 flask = []
 flask-wtf = []
+gunicorn = []
 itsdangerous = []
 jinja2 = []
 markupsafe = []
