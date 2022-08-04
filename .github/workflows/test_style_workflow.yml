@@ -24,7 +24,7 @@ jobs:
 
     - name: Install dependencies
       run: |
-        python poetry install
+        python pip poetry install
         poetry init
         poetry add flake8 pep8-naming flake8-broken-line flake8-return
     - name: Test with flake8
