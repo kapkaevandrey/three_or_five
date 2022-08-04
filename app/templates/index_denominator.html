@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% block title %}Математика для всех{% endblock title %}
+
+{% block content %}
+      <div class="container">
+        <div class="row my-3">
+          <div class="col-sm">
+          </div>
+          <div class="col-sm">
+            <form method="POST" novalidate>
+              {{ form.csrf_token }}
+              <div>
+                <div>
+                  {{ form.integer(class="form-control form-control-lg py-2 mb-3",
+                  placeholder=form.integer.label.text, id="form-title")}}
+                  <p>
+                    {% if form.integer.errors %}
+                      {% for error in form.integer.errors %}
+                        <span style="color:red">{{ error }}</span>
+                      {% endfor %}
+                    {% endif %}
+                  </p>
+                </div>
+                {{ form.submit(class="btn btn-primary") }}
+              </div>
+            </form>
+            <p class="py-3 mb-3">
+              {% for message in get_flashed_messages() %}
+                <span style="color:red">{{ message }}</span>
+              {% endfor %}
+            </p>
+          </div>
+          <div class="col-sm">
+          </div>
+        </div>
+      </div>
+      {% if response %}
+        <div class="container">
+          <div class="row ">
+            <div class="col-sm">
+            </div>
+            <div class="col-sm">
+              <p class="text-center">
+                <h5 class="text-center">{{ response.message }}!</h5>
+              </p>
+                 <p class="text-center">
+                {% if response.string_code == "foo" %}
+                  <img class="img-fluid mx-auto d-block" src="{{ url_for('static', filename='img/foobar/foo.png') }}" alt="" />
+                {% elif response.string_code == "bar" %}
+                  <img class="img-fluid mx-auto d-block" src="{{ url_for('static', filename='img/foobar/bar.png') }}" alt="" />
+                {% elif response.string_code == "foobar" %}
+                  <img class="img-fluid mx-auto d-block" src="{{ url_for('static', filename='img/foobar/foobar.png') }}" alt="" />
+                {% elif response.string_code == "no_divided" %}
+                  <img class="img-fluid mx-auto d-block" src="{{ url_for('static', filename='img/foobar/no_divided.png') }}" alt="" />
+                {% endif %}
+                 </p>
+            </div>
+            <div class="col-sm">
+            </div>
+          </div>
+        </div>
+      {% endif %}
+{% endblock content %}
