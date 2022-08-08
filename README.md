@@ -1,4 +1,4 @@
-# QRKot
+# Three_or_five
 
 ![parser_workflow](https://github.com/kapkaevandrey/three_or_five/actions/workflows/test_style_workflow.yml/badge.svg)
 
